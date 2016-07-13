@@ -42,52 +42,9 @@
 char const *device;
 char const *family;
 
-void check_device()
-{
-    char PRJ_ID[PROP_VALUE_MAX];
-    char PRJ_SKU[PROP_VALUE_MAX];
-    char PRJ_HD[PROP_VALUE_MAX];
-    FILE *fp;
-
-    fp = fopen("/proc/apid", "r");
-    fgets(PRJ_ID, sizeof(PRJ_ID), fp);
-    pclose(fp);
-
-    fp = fopen("/proc/aprf", "r");
-    fgets(PRJ_SKU, sizeof(PRJ_SKU), fp);
-    pclose(fp);
-
-    fp = fopen("/proc/aphd", "r");
-    fgets(PRJ_HD, sizeof(PRJ_HD), fp);
-    pclose(fp);
-
-    if (ISMATCH(PRJ_HD, "1\n")) {
-        family = "Z00L";
-        if (ISMATCH(PRJ_ID, "0\n")) {
-            if (ISMATCH(PRJ_SKU, "3\n")) {
-                device = "Z00W"; // ZE550KG
-            } else {
-                device = "Z00L"; // ZE550KL
-            }
-        } else if (ISMATCH(PRJ_ID, "1\n")) {
-            device = "Z00M"; // ZE600KL
-        }
-    } else if (ISMATCH(PRJ_HD, "0\n")) {
-        family = "Z00T";
-        if (ISMATCH(PRJ_ID, "0\n")) {
-            device = "Z00T"; // ZE551KL
-        } else if (ISMATCH(PRJ_ID, "1\n")) {
-            device = "Z011"; // ZE601KL
-        } else if (ISMATCH(PRJ_ID, "2\n")) {
-            device = "Z00C"; // ZX550KL
-        } else if (ISMATCH(PRJ_ID, "3\n")) {
-            device = "Z00U"; // ZD551KL
-        }
-    }
-}
-
 void vendor_load_properties()
 {
+
     char b_description[PROP_VALUE_MAX], b_fingerprint[PROP_VALUE_MAX];
     char p_carrier[PROP_VALUE_MAX], p_device[PROP_VALUE_MAX], p_model[PROP_VALUE_MAX];
     char platform[PROP_VALUE_MAX];
@@ -97,13 +54,14 @@ void vendor_load_properties()
     if (!rc || !ISMATCH(platform, ANDROID_TARGET))
         return;
 
-    check_device();
+    family = "WW_Phone";
+    device = "Z00RD";
 
-    sprintf(b_description, "%s-user 6.0.1 MMB29P WW_user_21.40.0.1692_20160615 release-keys", family);
-    sprintf(b_fingerprint, "asus/WW_%s/ASUS_%s:6.0.1/MMB29P/WW_user_21.40.0.1692_20160615:user/release-keys", device, device);
-    sprintf(p_model, "ASUS_%sD", device);
-    sprintf(p_device, "ASUS_%s", device);
-    sprintf(p_carrier, "US-ASUS_%s-WW_%s", device, device);
+    sprintf(b_description, "%s-user 6.0.1 MMB29P 13.10.10.25-20160523 release-keys", family);
+    sprintf(b_fingerprint, "asus/%s/ASUS_%s:6.0.1/MMB29P/13.10.10.25-20160523:user/release-keys", family, device);
+    sprintf(p_model, "ASUS_%s", device);
+    sprintf(p_device, "ASUS_%s_1", device);
+    sprintf(p_carrier, "US-ASUS_%s-%s", device, family);
 
     property_set("ro.build.product", family);
     property_set("ro.build.description", b_description);
