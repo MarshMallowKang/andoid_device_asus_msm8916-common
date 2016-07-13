@@ -68,8 +68,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/vendor/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    $(LOCAL_PATH)/audio/mixer_paths_mtp_ZD551KL.xml:system/etc/mixer_paths_mtp_ZD551KL.xml \
-    $(LOCAL_PATH)/audio/mixer_paths_mtp_ZE600KL.xml:system/etc/mixer_paths_mtp_ZE600KL.xml \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml
 
 # ANT+
@@ -152,9 +150,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_8939.xml:system/etc/media_codecs_8939.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance_8939.xml:system/etc/media_codecs_performance_8939.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
@@ -191,8 +187,8 @@ PRODUCT_PACKAGES += \
     librecovery_updater_asus
 
 # Releasetools
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/releasetools/init.asus.sh:install/bin/init.asus.sh
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/releasetools/init.asus.sh:install/bin/init.asus.sh
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -201,15 +197,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/thermal/thermal-engine-8916.conf:system/etc/thermal-engine-8916.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8916-ze550kl.conf:system/etc/thermal-engine-8916-ze550kl.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8929-ze600kl.conf:system/etc/thermal-engine-8929-ze600kl.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8939.conf:system/etc/thermal-engine-8939.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8939-zd550kl.conf:system/etc/thermal-engine-8939-zd550kl.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8939-ze550kl.conf:system/etc/thermal-engine-8939-ze550kl.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8939-ze551kl.conf:system/etc/thermal-engine-8939-ze551kl.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8939-ze600kl.conf:system/etc/thermal-engine-8939-ze600kl.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8939-ze601kl.conf:system/etc/thermal-engine-8939-ze601kl.conf
+    $(LOCAL_PATH)/thermal/thermal-engine-8916.conf:system/etc/thermal-engine.conf
 
 # Voice recognition
 PRODUCT_COPY_FILES += \
@@ -221,14 +209,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_wlan_dictionary.dat:system/etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_cmcc_zd550kl.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_cmcc_zd550kl.bin \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_cucc_zd550kl.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_cucc_zd550kl.bin \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_ze550kg.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_ze550kg.bin \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_ze550kl.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_ze550kl.bin \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_ze550kl_cmcc.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_ze550kl_cmcc.bin \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_ze551kl.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_ze551kl.bin \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_ze600kl.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_ze600kl.bin \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_zx550kl.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_zx550kl.bin
+    $(LOCAL_PATH)/wifi/COUNTRY:system/etc/firmware/wlan/prima/COUNTRY \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    $(LOCAL_PATH)/wifi/wifi.nv:system/etc/firmware/wlan/prima/wifi.nv
 
 PRODUCT_PACKAGES += \
     wcnss_service
@@ -237,7 +220,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqsap_sdk \
     libQWiFiSoftApCfg \
-    libwcnss_qmi \
+#    libwcnss_qmi \
     libwpa_client
 
 PRODUCT_PACKAGES += \
