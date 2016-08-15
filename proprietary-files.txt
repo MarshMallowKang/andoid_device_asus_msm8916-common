@@ -495,3 +495,36 @@ vendor/lib/libTimeService.so
 # Voice recognition
 vendor/lib/hw/sound_trigger.primary.msm8916.so
 vendor/lib/libsmwrapper.so
+
+# cmnlib firmware
+etc/firmware/cmnlib.b00
+etc/firmware/cmnlib.b01
+etc/firmware/cmnlib.b02
+etc/firmware/cmnlib.b03
+etc/firmware/cmnlib.mdt
+
+# venus firmware
+etc/firmware/venus.b00
+etc/firmware/venus.b01
+etc/firmware/venus.b02
+etc/firmware/venus.b03
+etc/firmware/venus.b04
+etc/firmware/venus.mdt
+
+# widevine firmware
+etc/firmware/widevine.b00
+etc/firmware/widevine.b01
+etc/firmware/widevine.b02
+etc/firmware/widevine.b03
+etc/firmware/widevine.mdt
+
+# WCNSS
+etc/firmware/wcnss.b00
+etc/firmware/wcnss.b01
+etc/firmware/wcnss.b02
+etc/firmware/wcnss.b04
+etc/firmware/wcnss.b06
+etc/firmware/wcnss.b09
+etc/firmware/wcnss.b10
+etc/firmware/wcnss.b11
+etc/firmware/wcnss.mdt
