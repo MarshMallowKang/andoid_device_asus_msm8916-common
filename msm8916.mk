@@ -83,8 +83,6 @@ PRODUCT_PACKAGES += \
     Snap
 
 # Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
 
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
@@ -138,7 +136,7 @@ PRODUCT_PACKAGES += \
 
 # Keystore
 PRODUCT_PACKAGES += \
-    keystore.msm8916
+    keystore.msm891
 
 # Light
 PRODUCT_PACKAGES += \

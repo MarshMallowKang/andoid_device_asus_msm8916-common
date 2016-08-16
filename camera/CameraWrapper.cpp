@@ -33,7 +33,9 @@
 #include <camera/Camera.h>
 #include <camera/CameraParameters.h>
 
-static android::Mutex gCameraWrapperLock;
+using namespace android;
+
+static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
 static char **fixed_set_params = NULL;
@@ -99,31 +101,35 @@ static int check_vendor_module()
 
 static char *camera_fixup_getparams(int id, const char *settings)
 {
-    android::CameraParameters params;
-    params.unflatten(android::String8(settings));
+    CameraParameters params;
+    params.unflatten(String8(settings));
 
 #if !LOG_NDEBUG
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
 
-    params.set("longshot-supported", "false");
-    params.set("scene-mode-values", "auto,hdr");
+    params.remove(CameraParameters::KEY_QC_LONGSHOT_SUPPORTED);
+    params.remove(CameraParameters::KEY_AUTO_WHITEBALANCE_LOCK_SUPPORTED);
 
-    const char *manualFocusPosition = params.get("manual-focus-position");
-    const char *manualFocusPositionType = params.get("manual-focus-pos-type");
+    params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES, "auto,hdr");
+
+    const char *manualFocusPosition =
+            params.get(CameraParameters::KEY_QC_MANUAL_FOCUS_POSITION);
+    const char *manualFocusPositionType =
+            params.get(CameraParameters::KEY_QC_MANUAL_FOCUS_POS_TYPE);
     if (manualFocusPositionType != NULL) {
         if (!strcmp(manualFocusPositionType, "2")) {
             if (manualFocusPosition != NULL) {
-                params.set("cur-focus-scale", manualFocusPosition);
+                params.set(CameraParameters::KEY_QC_FOCUS_POSITION_SCALE, manualFocusPosition);
             } else {
-                params.set("cur-focus-scale", "0");
+                params.set(CameraParameters::KEY_QC_FOCUS_POSITION_SCALE, "0");
             }
         } else if (!strcmp(manualFocusPositionType, "3")) {
             if (manualFocusPosition != NULL) {
-                params.set("cur-focus-diopter", manualFocusPosition);
+                params.set(CameraParameters::KEY_QC_FOCUS_POSITION_DIOPTER, manualFocusPosition);
             } else {
-                params.set("cur-focus-diopter", "0");
+                params.set(CameraParameters::KEY_QC_FOCUS_POSITION_DIOPTER, "0");
             }
         }
     }
@@ -133,7 +139,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
     params.dump();
 #endif
 
-    android::String8 strParams = params.flatten();
+    String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
 
     return ret;
@@ -141,18 +147,18 @@ static char *camera_fixup_getparams(int id, const char *settings)
 
 static char *camera_fixup_setparams(int id, const char *settings)
 {
-    android::CameraParameters params;
-    params.unflatten(android::String8(settings));
+    CameraParameters params;
+    params.unflatten(String8(settings));
 
 #if !LOG_NDEBUG
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
 
-    const char *sceneMode = params.get(android::CameraParameters::KEY_SCENE_MODE);
+    const char *sceneMode = params.get(CameraParameters::KEY_SCENE_MODE);
     if (sceneMode != NULL) {
-        if (!strcmp(sceneMode, android::CameraParameters::SCENE_MODE_HDR)) {
-            params.set("hdr-need-1x", "false");
+        if (!strcmp(sceneMode, CameraParameters::SCENE_MODE_HDR)) {
+            params.remove(CameraParameters::KEY_QC_HDR_NEED_1X);
         }
     }
 
@@ -161,7 +167,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
     params.dump();
 #endif
 
-    android::String8 strParams = params.flatten();
+    String8 strParams = params.flatten();
     if (fixed_set_params[id])
         free(fixed_set_params[id]);
     fixed_set_params[id] = strdup(strParams.string());
@@ -459,7 +465,7 @@ static int camera_device_close(hw_device_t *device)
 
     ALOGV("%s", __FUNCTION__);
 
-    android::Mutex::Autolock lock(gCameraWrapperLock);
+    Mutex::Autolock lock(gCameraWrapperLock);
 
     if (!device) {
         ret = -EINVAL;
@@ -503,7 +509,7 @@ static int camera_device_open(const hw_module_t *module, const char *name,
     wrapper_camera_device_t *camera_device = NULL;
     camera_device_ops_t *camera_ops = NULL;
 
-    android::Mutex::Autolock lock(gCameraWrapperLock);
+    Mutex::Autolock lock(gCameraWrapperLock);
 
     ALOGV("%s", __FUNCTION__);
 
@@ -621,3 +627,4 @@ static int camera_get_camera_info(int camera_id, struct camera_info *info)
         return 0;
     return gVendorModule->get_camera_info(camera_id, info);
 }
+
