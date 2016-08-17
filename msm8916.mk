@@ -128,7 +128,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/msm8939-snd-card-mtp_Button_Jack.kl:system/usr/keylayout/msm8939-snd-card-mtp_Button_Jack.kl \
     $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
     $(LOCAL_PATH)/keylayout/focal-touchscreen.kl:system/usr/keylayout/focal-touchscreen.kl \
-    $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
+    $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl \
+    $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
+
+# Keychars
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keychars/focal-touchscreen.kcm:system/usr/keychars/focal-touchscreen.kcm
 
 # Keyhandler
 PRODUCT_PACKAGES += \
