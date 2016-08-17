@@ -562,3 +562,10 @@ etc/firmware/wcnss.b09
 etc/firmware/wcnss.b10
 etc/firmware/wcnss.b11
 etc/firmware/wcnss.mdt
+
+# Keymaster
+etc/firmware/keymaster.b00
+etc/firmware/keymaster.b01
+etc/firmware/keymaster.b02
+etc/firmware/keymaster.b03
+etc/firmware/keymaster.mdt
