@@ -181,6 +181,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     init.qcom.rc \
+    init.sensors.rc \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
