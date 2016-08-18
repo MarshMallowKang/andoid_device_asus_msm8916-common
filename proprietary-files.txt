@@ -461,8 +461,15 @@ vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 
-# Sensors
+# Sensors -- I don't know why 32bit hals puts in system/lib. It was made in stock
 bin/akmd09911
+etc/sensor_init.sh
+etc/sensors/hals.conf
+lib/libcmdthread.so
+lib/sensors.AKM.msm8916.so
+lib/sensors.PS_ALS.msm8916.so
+lib/sensors.msm8916.so
+lib64/libcmdthread.so
 lib64/hw/sensors.AKM.msm8916.so
 lib64/hw/sensors.PS_ALS.msm8916.so
 lib64/hw/sensors.msm8916.so

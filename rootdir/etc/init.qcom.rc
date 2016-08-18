@@ -187,6 +187,16 @@ on boot
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
 
+    # Light/Proximity sensor
+    chown system shell /sys/devices/virtual/sensors/psensor/switch
+    chown system shell /sys/devices/virtual/sensors/lsensor/switch
+    chown system shell /sys/devices/virtual/sensors/psensor/hi_cal
+    chown system shell /sys/devices/virtual/sensors/psensor/low_cal
+    chown system shell /sys/devices/virtual/sensors/psensor/proxm
+    chown system shell /sys/devices/virtual/sensors/lsensor/200lux_cal
+    chown system shell /sys/devices/virtual/sensors/lsensor/1000lux_cal
+    chown system shell /sys/devices/virtual/sensors/lsensor/adc
+
     # Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
     chmod 2770 /dev/socket/qmux_radio
