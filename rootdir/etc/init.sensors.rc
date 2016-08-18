@@ -1,0 +1,50 @@
+# Z00R additional init
+
+on post-fs-data
+# Permissions for Sensors
+# Accelerometer kx022
+    chown system system /sys/bus/i2c/devices/0-001f/enable
+    chown system system /sys/bus/i2c/devices/0-001f/delay
+    chown system shell /sys/bus/i2c/devices/0-001f/ZenMotion_double_tap
+    chown system shell /sys/bus/i2c/devices/0-001f/ZenMotion_flip
+    chown system shell /sys/bus/i2c/devices/0-001f/ZenMotion_flick
+    chown system shell /sys/bus/i2c/devices/0-001f/ZenMotion_set_flush
+
+    chmod 0660 /sys/bus/i2c/devices/0-001f/enable
+    chmod 0660 /sys/bus/i2c/devices/0-001f/delay
+    chmod 0660 /sys/bus/i2c/devices/0-001f/ZenMotion_double_tap
+    chmod 0660 /sys/bus/i2c/devices/0-001f/ZenMotion_flip
+    chmod 0660 /sys/bus/i2c/devices/0-001f/ZenMotion_flick
+    chmod 0660 /sys/bus/i2c/devices/0-001f/ZenMotion_set_flush
+
+# AKM E-compass
+    chown system system /sys/class/compass/akm09911/enable_acc
+    chown system system /sys/class/compass/akm09911/enable_mag
+    chown system system /sys/class/compass/akm09911/enable_fusion
+    chown system system /sys/class/compass/akm09911/delay_acc
+    chown system system /sys/class/compass/akm09911/delay_mag
+    chown system system /sys/class/compass/akm09911/delay_fusion
+    chown system system /sys/class/compass/akm09911/accel
+    chown system system /dev/akm09911_dev
+
+    chmod 0660 /sys/class/compass/akm09911/enable_mag
+    chmod 0660 /sys/class/compass/akm09911/delay_mag
+    chmod 0660 /sys/class/compass/akm09911/enable_acc
+    chmod 0660 /sys/class/compass/akm09911/delay_acc
+    chmod 0660 /sys/class/compass/akm09911/enable_fusion
+    chmod 0660 /sys/class/compass/akm09911/delay_fusion
+    chmod 0660 /dev/akm09911_dev
+
+    chmod 0774 /sys/devices/virtual/compass/akm09911/akm_status
+    chmod 0774 /sys/devices/virtual/compass/akm09911/akm_09911_raw
+    chmod 0774 /sys/devices/virtual/compass/akm09911/akm_i2c
+    chmod 0774 /sys/bus/i2c/devices/0-000f/Gsensor_raw
+    chmod 0774 /sys/bus/i2c/devices/0-000f/Gsensor_status
+
+# adding Ecompass service
+service akmd  /system/bin/akmd09911 -m 4
+    class core
+    user root
+    group root system misc input
+    seclabel u:r:system_app:s0
+    oneshot

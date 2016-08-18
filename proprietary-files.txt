@@ -462,13 +462,9 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 
 # Sensors
-lib/libinvensense_hal.so
-lib/libmllite.so
-lib/libmplmpu.so
-lib64/libinvensense_hal.so
-lib64/libmllite.so
-lib64/libmplmpu.so
-lib/hw/sensors.msm8916.so
+bin/akmd09911
+lib64/hw/sensors.AKM.msm8916.so
+lib64/hw/sensors.PS_ALS.msm8916.so
 lib64/hw/sensors.msm8916.so
 
 # Tether
