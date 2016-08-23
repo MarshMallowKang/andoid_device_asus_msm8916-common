@@ -89,9 +89,16 @@ vendor/lib64/libbtnv.so
 
 # Camera
 bin/mm-qcamera-daemon
+bin/mm-qcamera-app
 bin/Camera_Unique_ID
 bin/BackupCalibrationData
 bin/RestoreCalibrationData
+bin/camera_flash
+bin/camera_flash2
+bin/CameraModule
+bin/CameraOTP
+bin/CameraResolution
+bin/CameraTest
 lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
@@ -499,9 +506,9 @@ vendor/lib/libNimsWrap.so
 vendor/lib/libvendorconn.so
 
 # DIT - Camera Laser
-bin/LaserFocus_on
-bin/LaserFocus_CalStart
-bin/LaserFocus_enforce
+bin/LaserOn
+bin/LaserFocus_Status
+bin/ZE500KG_afCali
 lib/DataSet/ispDB/ParameterDB.db
 lib/DataSet/ditSCidGen/msgchk.db
 lib/DIT_AT_BACK_HL.cfg
