@@ -1,6 +1,68 @@
 # Z00R additional init
 
 on post-fs-data
+
+#ASUS_BSP +++ Stimber_Hsueh "implement camera status interface for ATD"
+	rm /data/data/camera_status
+    symlink /proc/driver/camera_status /data/data/camera_status
+    chmod 0777 /data/data/camera_status
+
+    rm /data/data/vga_status
+    symlink /proc/driver/vga_status /data/data/vga_status
+    chmod 0777 /data/data/vga_status
+#ASUS_BSP --- Stimber_Hsueh "implement camera status interface for ATD"
+
+#ASUS_BSP +++ PJ "implement CalibrationBackup interface for ATD&DIT"
+    rm /data/data/Camera_Unique_ID
+    symlink /system/bin/Camera_Unique_ID /data/data/Camera_Unique_ID
+    chmod 0777 /data/data/Camera_Unique_ID
+	chown system shell /data/data/Camera_Unique_ID
+    rm /data/data/BackupCalibrationData
+    symlink /system/bin/BackupCalibrationData /data/data/BackupCalibrationData
+    chmod 0777 /data/data/BackupCalibrationData
+	chown system shell /data/data/BackupCalibrationData
+    rm /data/data/RestoreCalibrationData
+    symlink /system/bin/RestoreCalibrationData /data/data/RestoreCalibrationData
+    chmod 0777 /data/data/RestoreCalibrationData
+	chown system shell /data/data/RestoreCalibrationData
+#ASUS_BSP --- PJ "implement CalibrationBackup interface for ATD&DIT"
+
+#ASUS_BSP +++ srhuang "Hall Sensor"
+	symlink /sys/class/sensors/hallsensor/status	/data/data/hallsensor_status
+	symlink /sys/class/sensors/hallsensor/debounce	 /data/data/hallsensor_debounce
+	chmod 0600 /data/data/hallsensor_status
+	chmod 0600 /data/data/hallsensor_debounce
+#ASUS_BSP --- srhuang "Hall Sensor"
+
+# ASUS_BSP +++ LaserFocus "Camera LaserFocus sensor VL6180"
+        chown media sdcard_rw /proc/driver/LaserFocus_on
+        chown media sdcard_rw /proc/driver/LaserFocus_value
+        chown system sdcard_rw /proc/driver/LaserFocus_value_more_info
+        chown system sdcard_rw /proc/driver/LaserFocus_Status
+        chown media sdcard_rw /proc/driver/LaserFocus_Status_For_Camera
+        chown system sdcard_rw /proc/driver/LaserFocus_CalStart
+        chown system sdcard_rw /proc/driver/LaserFocus_enforce
+        chown system sdcard_rw /proc/driver/LaserFocus_debug_dump
+        chown system sdcard_rw /proc/driver/LaserFocus_CalGetInputData
+        chown media sdcard_rw /factory/laura_cal_data.txt
+
+        rm /data/data/LaserFocus_on
+        rm /data/data/LaserFocus_value
+        rm /data/data/LaserFocus_value_more_info
+        rm /data/data/LaserFocus_Status
+        rm /data/data/LaserFocus_CalStart
+        rm /data/data/LaserFocus_disable
+        rm /data/data/LaserFocus_debug_dump
+
+        symlink /system/bin/LaserFocus_on /data/data/LaserFocus_on
+        symlink /proc/driver/LaserFocus_value /data/data/LaserFocus_value
+        symlink /proc/driver/LaserFocus_value_more_info /data/data/LaserFocus_value_more_info
+        symlink /proc/driver/LaserFocus_Status /data/data/LaserFocus_Status
+        symlink /system/bin/LaserFocus_CalStart /data/data/LaserFocus_CalStart
+        symlink /system/bin/LaserFocus_enforce /data/data/LaserFocus_disable
+        symlink /proc/driver/LaserFocus_debug_dump /data/data/LaserFocus_debug_dump
+# ASUS_BSP ---
+
 # Permissions for Sensors
 # Accelerometer kx022
     chown system system /sys/bus/i2c/devices/0-001f/enable
