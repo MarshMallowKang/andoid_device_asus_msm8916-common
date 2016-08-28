@@ -1,4 +1,4 @@
-# ACDB Data
+# ACDB Data - Z00R
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 etc/acdbdata/MTP/MTP_General_cal.acdb
 etc/acdbdata/MTP/MTP_Global_cal.acdb
@@ -41,7 +41,7 @@ vendor/lib64/libadsprpc.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
 
-# Arcsoft - Camera effects
+# Arcsoft - Camera effects - Z00R
 etc/gallery_arcsoft_config.cng
 lib/libarcsoft_beautyshot.so
 lib/libarcsoft_face_tracking.so
@@ -82,12 +82,12 @@ vendor/lib/soundfx/libqcvirt.so
 # Battery
 bin/vm_bms
 
-# Bluetooth
+# Bluetooth - Z00R
 bin/btnvtool
 bin/hci_qcomm_init
 vendor/lib64/libbtnv.so
 
-# Camera
+# Camera - Z00R
 bin/mm-qcamera-daemon
 bin/mm-qcamera-app
 bin/Camera_Unique_ID
@@ -100,8 +100,10 @@ bin/CameraOTP
 bin/CameraResolution
 bin/CameraTest
 lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
+lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
+lib/libmm-omxcore.so
 lib/libqomx_core.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
@@ -187,7 +189,7 @@ vendor/lib/libmmqjpeg_codec.so
 vendor/lib/liboemcamera.so
 vendor/lib/libqomx_jpegenc.so
 
-# Camera autofocus
+# Camera autofocus - Z00R
 vendor/lib/libactuator_a3907_camcorder.so
 vendor/lib/libactuator_a3907_camera.so
 vendor/lib/libactuator_a3907.so
@@ -231,7 +233,7 @@ vendor/lib/libactuator_rohm_bu64243gwz_camcorder.so
 vendor/lib/libactuator_rohm_bu64243gwz_camera.so
 vendor/lib/libactuator_rohm_bu64243gwz.so
 
-# Camera chromatix
+# Camera chromatix - Z00R
 vendor/lib/libchromatix_imx132_common.so
 vendor/lib/libchromatix_imx132_default_video.so
 vendor/lib/libchromatix_imx132_liveshot.so
@@ -478,7 +480,7 @@ vendor/lib/libchromatix_t4k37_asus_preview_binning.so
 vendor/lib/libchromatix_t4k37_asus_preview_full.so
 vendor/lib/libchromatix_t4k37_asus_preview_video.so
 
-# Camera firmware
+# Camera firmware - Z00R
 etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
@@ -520,7 +522,7 @@ vendor/lib/libdpmnsrm.so
 vendor/lib/libNimsWrap.so
 vendor/lib/libvendorconn.so
 
-# DIT - Camera Laser
+# DIT - Camera Laser - Z00R
 bin/LaserOn
 bin/LaserFocus_Status
 bin/ZE500KG_afCali
