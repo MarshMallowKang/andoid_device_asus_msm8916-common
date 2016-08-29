@@ -61,7 +61,7 @@ lib/libsarcsoftface.so
 lib/libsarcsoft_gallery.so
 lib/libsarcsoft.so
 lib/libsphere3.so
-lib/style.cng
+vendor/etc/style.cng
 
 # Audio
 lib/soundfx/libicepower.so
@@ -118,6 +118,7 @@ vendor/lib/libmmcamera2_is.so
 vendor/lib/libmmcamera2_pproc_modules.so
 vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_vpe_module.so
 vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/libmmcamera_dw9761b_eeprom.so
