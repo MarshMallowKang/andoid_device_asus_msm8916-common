@@ -41,6 +41,7 @@
 
 char const *device;
 char const *family;
+char const *product;
 char const *heapstartsize;
 char const *heapgrowthlimit;
 char const *heapsize;
@@ -94,6 +95,7 @@ void vendor_load_properties()
     /* Device Setting */
     family = "WW_Phone";
     device = "Z00RD";
+    product = "ZE500KG"; // need for Сamera Hal project ID check 
 
     /* Heap Setting */
     heapstartsize = "8m";
@@ -107,7 +109,7 @@ void vendor_load_properties()
     sprintf(p_device, "ASUS_%s_1", device);
     sprintf(p_carrier, "US-ASUS_%s-%s", device, family);
 
-    property_set("ro.build.product", family);
+    property_set("ro.build.product", product);
     property_set("ro.build.description", b_description);
     property_set("ro.build.fingerprint", b_fingerprint);
     property_set("ro.product.carrier", p_carrier);

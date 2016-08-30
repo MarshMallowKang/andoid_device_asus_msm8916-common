@@ -527,12 +527,14 @@ vendor/lib/libvendorconn.so
 bin/LaserOn
 bin/LaserFocus_Status
 bin/ZE500KG_afCali
+bin/dit_cali
+bin/dit_af_cali
 lib/DataSet/ispDB/ParameterDB.db
 lib/DataSet/ditSCidGen/msgchk.db
 lib/DIT_AT_BACK_HL.cfg
 lib/DIT_AT_BACK_NORMAL.cfg
 lib/DIT_AT_BACK_PREVIEW.cfg
-lib/DIT_AT_BACK_SR.cfg
+lib/DIT_AT_BACK_SR.CFG
 lib/DIT_AT_BACK_VIDEO.cfg
 lib/DIT_AT_FRONT_HL.cfg
 lib/DIT_AT_FRONT_NORMAL.cfg
