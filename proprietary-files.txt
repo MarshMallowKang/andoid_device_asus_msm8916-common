@@ -554,17 +554,16 @@ vendor/lib/libxditk_DIT_Qualcomm.so
 vendor/lib/libxditk_mmcamera2_stats_algorithm.so
 vendor/lib/libxditk_Network.so
 
-# DRM - from kipper
+# DRM
 bin/qseecomd
-lib/libdrmdecrypt.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libssd.so
-vendor/lib/libwvdrm_L3.so
+vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
-vendor/lib/libWVStreamControlAPI_L3.so
+vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
@@ -605,6 +604,10 @@ vendor/lib/libquipc_os_api.so
 vendor/lib/libulp2.so
 vendor/lib/libxtadapter.so
 vendor/lib/libxtwifi_ulp_adaptor.so
+
+# Keystore
+lib/hw/keystore.qcom.so
+lib64/hw/keystore.qcom.so
 
 # Graphics
 # Adreno 300 - from crackling
