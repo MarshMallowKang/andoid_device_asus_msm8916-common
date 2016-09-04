@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- ZE500KL_V6.0 20150904 WW -->
+<!-- ZE500KL_V6.0 20150904 EU -->
 <mixer>
     <!-- These are the initial mixer settings -->
     <ctl name="Voice Rx Device Mute" id="0" value="0" />
@@ -539,7 +539,7 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="RX1 Digital Volume" value="77" />
         <ctl name="RX2 Digital Volume" value="77" />
-        <ctl name="EAR PA Gain" value="POS_6_DB" />
+        <ctl name="EAR PA Gain" value="POS_1P5_DB" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
     </path>

@@ -159,7 +159,7 @@ esac
 
 case $soc_id in
     "206" | "247" | "248" | "249" | "250" | "233" | "240" | "242")
-        setprop ro.min_freq_0 800000
+        setprop ro.min_freq_0 200000
     ;;
     "239" | "241" | "263" | "268" | "269" | "270" | "271")
         setprop ro.min_freq_0 960000

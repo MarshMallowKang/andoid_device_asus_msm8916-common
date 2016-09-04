@@ -887,10 +887,12 @@ service perfd /vendor/bin/perfd
     group root
     disabled
 
-service thermal-engine /vendor/bin/thermal-engine
-    class main
+service shawnA /etc/init.thermal_conf.sh
+    class core
     user root
-    group root
+    oneshot
+    disabled
+    seclabel u:r:shawnA:s0
 
 service time_daemon /system/bin/time_daemon
     class late_start
