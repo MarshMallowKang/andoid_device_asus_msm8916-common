@@ -140,6 +140,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl \
     $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
 
+
+PRODUCT_PACKAGES += \
+    keystore.msm8916
+
 # Keychars
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keychars/focal-touchscreen.kcm:system/usr/keychars/focal-touchscreen.kcm
