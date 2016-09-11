@@ -1,1 +1,6 @@
-Device tree for Asus MSM8916 devices
+Common device tree for Asus ZE500KG (MSM8916)
+
+BUGS:
+ -Sound
+ -Keystore
+ -Gestures (Z, C, V, etc)
