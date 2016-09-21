@@ -684,6 +684,8 @@ etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
 etc/firmware/a420_pfp.fw
 etc/firmware/a420_pm4.fw
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
 
 # Media
 vendor/lib/libI420colorconvert.so
@@ -845,14 +847,21 @@ vendor/lib64/lib-rtpsl.so
 vendor/lib64/libvoice-svc.so
 vendor/lib64/libvcel.so
 
-# cmnlib firmware
+# Keymaster firmware
+etc/firmware/keymaster.b00
+etc/firmware/keymaster.b01
+etc/firmware/keymaster.b02
+etc/firmware/keymaster.b03
+etc/firmware/keymaster.mdt
+
+# Cmnlib firmware
 etc/firmware/cmnlib.b00
 etc/firmware/cmnlib.b01
 etc/firmware/cmnlib.b02
 etc/firmware/cmnlib.b03
 etc/firmware/cmnlib.mdt
 
-# venus firmware
+# Venus firmware
 etc/firmware/venus.b00
 etc/firmware/venus.b01
 etc/firmware/venus.b02
@@ -860,14 +869,14 @@ etc/firmware/venus.b03
 etc/firmware/venus.b04
 etc/firmware/venus.mdt
 
-# widevine firmware
+# Widevine firmware
 etc/firmware/widevine.b00
 etc/firmware/widevine.b01
 etc/firmware/widevine.b02
 etc/firmware/widevine.b03
 etc/firmware/widevine.mdt
 
-# WCNSS
+# WCNSS firmware
 etc/firmware/wcnss.b00
 etc/firmware/wcnss.b01
 etc/firmware/wcnss.b02
@@ -878,9 +887,5 @@ etc/firmware/wcnss.b10
 etc/firmware/wcnss.b11
 etc/firmware/wcnss.mdt
 
-# Keymaster
-etc/firmware/keymaster.b00
-etc/firmware/keymaster.b01
-etc/firmware/keymaster.b02
-etc/firmware/keymaster.b03
-etc/firmware/keymaster.mdt
+# Other firmwares
+etc/frimware/ice40.bin
